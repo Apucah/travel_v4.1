@@ -1,0 +1,40 @@
+.modal{
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9998;
+}
+
+
+.modal-dialog{
+  margin-top: 30vh !important;
+}
+
+#mobil .box-header, #mobil .with-border{
+  width: 50% !important;
+}
+
+
+#jadwal_kerja{
+  z-index: 9999 !important;
+}
+
+
+.select2-selection{
+  z-index: 9999 !important;
+}
+
+
+#notifikasi{
+  position: absolute;
+  width: 50%;
+  right: 2px;
+  z-index: 9999;
+}
+
+@media all and (max-width: 720px) {
+  #notifikasi{
+    width: 100% !important;
+  }
+}
