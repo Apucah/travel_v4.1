@@ -26,7 +26,7 @@ $(function () {
         pointStrokeColor: "#c1c7d1",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgb(220,220,220)",
-        data: [0,0,0,0, 66, 55, 10]
+        data: [0,0,0,0, 2, 0, 0]
       },
       {
         label: "Paket",
@@ -36,7 +36,7 @@ $(function () {
         pointStrokeColor: "rgba(60,141,188,1)",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(60,141,188,1)",
-        data: [0,0,0,0, 86, 27, 90]
+        data: [0,0,0,0, 3, 0, 0]
       }
     ]
   };

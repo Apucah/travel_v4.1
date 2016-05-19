@@ -49,19 +49,49 @@ $this->load->view('notice.php');
                     <table class="table no-margin">
                       <thead>
                         <tr>
-                              <?php foreach ($data_pesanan_paket[0] as $key2 => $value2) {?>
-                                  <th><?=strtoupper($key2);?></th>
-                              <?php } ?>
+                          <th>No Pemesanan</th>
+                          <th>Nama</th>
+                          <th>Nama Paket</th>
+                          <th>Tgl Mulai</th>
+                          <th>Tgl Pemesanan</th>
+                          <th>Mobil</th>
+                          <th>Harga</th>
+                          <th>
+                            Status
+                          </th>
+                          <th>
+                            Aksi
+                          </th>
+
                         </tr>
                       </thead>
                       <tbody>
                             <?php foreach ($data_pesanan_paket as $value) {?>
-                            <tr>
+                            <tr id="<?=$value['no_pemesanan']?>">
                                 <td><p class="blue"><?=$value['no_pemesanan']?></p></td>
-                                <td><p class="blue"><?=$value['id_pemesan']?></p></td>
-                                <td><b><?=$value['paket']?></b></td>
-                                <td><span class="label label-info"><?=$value['tgl_pemesanan']?></span></td>
+                                <td><p class="blue"><?=$value['nama']?></p></td>
+                                <td><b><?=$value['nama_paket']?></b></td>
                                 <td><span class="label label-info"><?=$value['tgl_mulai']?></span></td>
+                                <td><span class="label label-info"><?=$value['tgl_pemesanan']?></span></td>
+                                <td><?=$value['nama_mobil'];?></td>
+                                <td><?=$value['harga'];?></td>
+                                <td>
+                                  <?php
+                                    if ($value['status_konfirmasi'] == '') {
+                                      echo '<span class="label label-warning">Belum Dibayar</span>';
+                                    }
+                                    else{
+                                      echo '<span class="label label-success">Dibayar</span>';
+                                    }
+
+                                  ?>
+                                </td>
+                                <td>
+                                  <?php if ($value['status_konfirmasi'] != 1): ?>
+                                      <button type="button" name="" class="konfirmasi-paket btn btn-success" data-id="<?=$value['no_pemesanan']?>">Konfirmasi</button>
+                                  <?php endif; ?>
+                                  <button type="button" name="" class="hapus-paket btn btn-danger" data-id="<?=$value['no_pemesanan']?>">Hapus</button>
+                                </td>
                             </tr>
                             <?}?>
                       </tbody>
@@ -70,7 +100,7 @@ $this->load->view('notice.php');
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
                   <p>
-                    <h3>Total <?=$total_pelanggan;?></h3>
+                    <h3 id="total-paket">Total <?=$total_pemesan_paket;?></h3>
                   </p>
                 </div><!-- /.box-footer -->
               </div>
@@ -89,22 +119,46 @@ $this->load->view('notice.php');
                                   <table class="table no-margin">
                                     <thead>
                                       <tr>
-                                            <?php foreach ($data_pesanan_bangku[0] as $key2 => $value2) {?>
-                                                <th><?=strtoupper($key2);?></th>
-                                            <?php } ?>
+                                        <th>No Pemesanan</th>
+                                        <th>Nama </th>
+                                        <th>Jumlah Bangku</th>
+                                        <th>Tujuan</th>
+                                        <th>Tgl Mulai</th>
+                                        <th>Tgl Pemesanan</th>
+                                        <th>Nama Supir</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                           <?php foreach ($data_pesanan_bangku as $value) {?>
-                                          <tr>
+                                          <tr id="<?=$value['no_pemesanan']?>">
                                               <td><p class="blue"><?=$value['no_pemesanan']?></p></td>
-                                              <td><p class="blue"><?=$value['id_pemesan']?></p></td>
+                                              <td><p class="blue"><?=$value['nama']?></p></td>
                                               <td><b><?=$value['jumlah_bangku']?></b></td>
-                                              <td><span class="label label-info"><?=$value['tujuan']?></span></td>
+                                              <td><?=$value['tujuan']?></td>
                                               <td><span class="label label-info"><?=$value['tgl_mulai']?></span></td>
-                                              <td><?=$value['tgl_pemesanan'];?></td>
+                                              <td><span class="label label-info"><?=$value['tgl_pemesanan'];?></span></td>
+                                              <td><?=$value['nama_supir'];?></td>
                                               <td><?=$value['total'];?></td>
-                                              <td><?=$value['id_supir'];?></td>
+                                              <td>
+                                                <?php
+                                                  if ($value['status'] == '') {
+                                                    echo '<span class="label label-warning">Belum Dibayar</span>';
+                                                  }
+                                                  else{
+                                                    echo '<span class="label label-success">Dibayar</span>';
+                                                  }
+
+                                                ?>
+                                              </td>
+                                              <td>
+                                                <?php if ($value['status'] != 1): ?>
+                                                    <button type="button" name="" class="konfirmasi-bangku btn btn-success" data-id="<?=$value['no_pemesanan']?>">Konfirmasi</button>
+                                                <?php endif; ?>
+                                                <button type="button" name="" class="hapus-bangku btn btn-danger" data-id="<?=$value['no_pemesanan']?>">Hapus</button>
+                                              </td>
                                           </tr>
                                           <?}?>
                                     </tbody>
@@ -113,7 +167,7 @@ $this->load->view('notice.php');
                               </div><!-- /.box-body -->
                               <div class="box-footer clearfix">
                                 <p>
-                                  <h3>Total <?=$total_pelanggan;?></h3>
+                                  <h3 id="total-bangku">Total <?=$total_pemesan_bangku;?></h3>
                                 </p>
                               </div><!-- /.box-footer -->
                             </div>

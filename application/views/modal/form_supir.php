@@ -18,7 +18,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="jadwal_kerja[]" class="col-sm-2 control-label">Select Multiple</label>
+                <label for="jadwal_kerja[]" class="col-sm-2 control-label">Hari</label>
                 <div class="col-sm-8">
                   <select multiple class="form-control" name="jadwal_kerja[]">
                     <option>Senin</option>

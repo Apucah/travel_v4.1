@@ -301,7 +301,6 @@ class Dashboard extends CI_Controller {
 
 		$veri = $this->dashboard_model->insert_bangku_with_identitas($tabel, $data) ? 1 : 0;
 
-
 		flush();
 
 

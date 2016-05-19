@@ -300,5 +300,6 @@ $this->load->view('template/js');
 <?php
 // $this->load->view('jquery/chart-config');
 $this->load->view('jquery/config');
+$this->load->view('jquery/chart-config');
 $this->load->view('template/foot');
 ?>

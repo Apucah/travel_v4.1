@@ -6,7 +6,7 @@
 
     $('body').addClass('sidebar-collapse');
     // notif sukses
-    var sukses = '  <div id="noti" class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4>	<i class="icon fa fa-check"></i> Berhasil</h4>Berhasil memasukan data</div>'
+    var sukses = '  <div id="noti" class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4>	<i class="icon fa fa-check"></i> Berhasil</h4></div>'
     $('#notifikasi').append(sukses).hide();
 
     $('#noti').hide();
@@ -126,7 +126,7 @@
             success : function(data){
                 $('div#pemesanan_paket').fadeOut(300,function(){
                   $('div#notifikasi').fadeIn(200).fadeOut(1000,function(){
-                    window.location="invoice/paket/"+data;
+                    window.location="<?=base_url();?>invoice/paket/"+data;
                   });
                 });
             }
@@ -139,7 +139,7 @@
       // AJAX PEMESANAN PAKET WITH IDENTITAS
       $('#save-pemesanan-paket-identitas').click(function(){
         var data = {
-          id_pemesan : $('select[name="identitas"]').val(),
+          id_pemesan : $('select[name="identitas2"]').val(),
           paket : $('select[name="paket2"]').val(),
           tgl_mulai : $('input[name="tgl_mulai2"]').val()
         };
@@ -152,7 +152,7 @@
             success : function(data){
                 $('div#pemesanan_paket_identitas').fadeOut(300,function(){
                   $('div#notifikasi').fadeIn(200).fadeOut(1000,function(){
-                    window.location="invoice/paket/"+data;
+                    window.location="<?=base_url();?>invoice/paket/"+data;
                   });
                 });
             }
@@ -177,7 +177,7 @@
             console.log(data);
               $('div#pemesanan_bangku_identitas').fadeOut(300,function(){
                 $('div#notifikasi').fadeIn(200).fadeOut(1000,function(){
-                  window.location="invoice/bangku/"+data;
+                  window.location="<?=base_url();?>invoice/bangku/"+data;
                   // console.log(data);
                 });
               });
@@ -210,7 +210,7 @@
           console.log(data);
             $('div#pemesanan_bangku').fadeOut(300,function(){
               $('div#notifikasi').fadeIn(200).fadeOut(1000,function(){
-                window.location="invoice/bangku/"+data;
+                window.location="<?=base_url();?>invoice/bangku/"+data;
                 // console.log(data);
               });
             });
@@ -300,6 +300,8 @@
       $('body').addClass('sidebar-collapse');
     });
 
+
+
   });
 
 
@@ -307,5 +309,70 @@
   // $('input[type="date"]').datepicker({
   //   formatData : 'yyyy-mm-dd'
   // });
+
+
+  // ajax hapus status_model
+  $('.hapus-paket').click(function(){
+    var no_pem = $(this).attr('data-id');
+
+    $.ajax({
+      method: 'POST',
+      url : '<?=base_url();?>status/hapus_paket',
+      data : { no_pemesanan : no_pem},
+      success : function(data){
+        $('div#notifikasi').fadeIn(200).fadeOut(5000,function(){
+          $('tr#'+no_pem).remove();
+        });
+      }
+    });
+  });
+
+  $('.hapus-bangku').click(function(){
+    var no_pem = $(this).attr('data-id');
+
+    $.ajax({
+      method: 'POST',
+      url : '<?=base_url();?>status/hapus_bangku',
+      data : { no_pemesanan : no_pem},
+      success : function(data){
+        $('div#notifikasi').fadeIn(200).fadeOut(5000,function(){
+          $('tr#'+no_pem).remove();
+        });
+      }
+    });
+  });
+
+
+  $('.konfirmasi-bangku').click(function(){
+    var no_pem = $(this).attr('data-id');
+
+    $.ajax({
+      method: 'POST',
+      url : '<?=base_url();?>status/konfirmasi_bangku',
+      data : { no_pemesanan : no_pem},
+      success : function(data){
+        $('div#notifikasi').fadeIn(200).fadeOut(5000,function(){
+
+        });
+      }
+    });
+  });
+
+  $('.konfirmasi-paket').click(function(){
+    var no_pem = $(this).attr('data-id');
+
+    // console.log(no_pem);
+    $.ajax({
+      method: 'POST',
+      url : '<?=base_url();?>status/konfirmasi_paket',
+      data : { no_pemesanan : no_pem},
+      success : function(data){
+        $('div#notifikasi').fadeIn(200).fadeOut(5000,function(){
+
+        });
+      }
+    });
+
+  });
 
   </script>

@@ -14,7 +14,7 @@
             <div class="form-group" id="iden">
               <label for="identitas" class="col-sm-2 control-label">Nama</label>
               <div class="col-sm-8">
-                <select class="form-control" name="identitas">
+                <select class="form-control" name="identitas2">
                   <?php foreach ($identitas_pelanggan as $identitas) {?>
                   <option value="<?=$identitas->id_pemesan;?>"><?=$identitas->nama;?></option>
                   <?php } ?>

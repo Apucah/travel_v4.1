@@ -3,6 +3,7 @@
 $this->load->view('template/head');
 ?>
 
+  
 <!--tambahkan custom css disini-->
 <!-- iCheck -->
 <link href="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/iCheck/flat/blue.css') ?>" rel="stylesheet" type="text/css" />
@@ -69,7 +70,7 @@ $this->load->view('notice.php');
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
                   <p>
-                    <h3>Total <?=$total_mobil;?></h3> 
+                    <h3>Total <?=$total_mobil;?></h3>
                   </p>
                 </div><!-- /.box-footer -->
               </div>

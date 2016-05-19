@@ -108,13 +108,50 @@ class Status extends CI_Controller{
     $this->load->model('status_model');
     $data = $this->data_data();
 
-    $data['data_pesanan_paket'] = $this->status_model->get_data('tbl_pemesanan_paket',10);
-    $data['data_pesanan_bangku'] = $this->status_model->get_data('tbl_pemesanan_bangku',10);
-
+    $data['data_pesanan_paket'] = $this->status_model->get_data_paket();
+    $data['data_pesanan_bangku'] = $this->status_model->get_data_bangku();
+    $data['total_pemesan_paket'] = $this->status_model->get_count('tbl_pemesanan_paket')->total;
+    $data['total_pemesan_bangku'] = $this->status_model->get_count('tbl_pemesanan_bangku')->total;
     $this->load->view('status_pesanan', $data);
 
     // echo '<pre>';
     // print_r($data);
   }
 
+
+
+  public function hapus_paket(){
+    $tabel = 'tbl_pemesanan_paket';
+    $where = ['no_pemesanan' => $this->input->post('no_pemesanan')];
+    $this->status_model->hapus($tabel, $where);
+
+    echo 'Berhasil Menghapus Pemesanan '.$this->input->post('no_pemesanan');
+  }
+
+  public function hapus_bangku(){
+    $tabel = 'tbl_pemesanan_bangku';
+    $where = ['no_pemesanan' => $this->input->post('no_pemesanan')];
+    $this->status_model->hapus($tabel, $where);
+
+    echo 'Berhasil Menghapus Pemesanan '.$this->input->post('no_pemesanan');
+  }
+
+
+  public function konfirmasi_bangku(){
+    $tabel = 'tbl_pemesanan_bangku';
+    $where = ['no_pemesanan' => $this->input->post('no_pemesanan')];
+    $data = ['status' => 1];
+    $this->status_model->update($tabel,$data,$where);
+
+    echo 'Berhasil Mengupdate'.$this->input->post('no_pemesanan');;
+  }
+
+  public function konfirmasi_paket(){
+    $tabel = 'tbl_pemesanan_paket';
+    $where = ['no_pemesanan' => $this->input->post('no_pemesanan')];
+    $data = ['status_konfirmasi' => 1];
+    $this->status_model->update($tabel,$data,$where);
+
+    echo 'Berhasil Mengupdate'.$this->input->post('no_pemesanan');;
+  }
 }

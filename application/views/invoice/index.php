@@ -27,22 +27,6 @@ Jl.PERJUANGAN NO 65A KESAMBI <br> CIREBON <br>
 
 Phone: (555) 555-5555</readonly>
 
-            <!-- <div id="logo">
-
-              <div id="logoctr">
-                <a href="javascript:;" id="change-logo" title="Change logo">Change Logo</a>
-                <a href="javascript:;" id="save-logo" title="Save changes">Save</a>
-                |
-                <a href="javascript:;" id="delete-logo" title="Delete logo">Delete Logo</a>
-                <a href="javascript:;" id="cancel-logo" title="Cancel changes">Cancel</a>
-              </div>
-
-              <div id="logohelp">
-                <input id="imageloc" type="text" size="50" value="" /><br />
-                (max width: 540px, max height: 100px)
-              </div>
-              <img id="image" src="<?=base_url("assets/invoice/images/logo.png");?>" alt="logo" />
-            </div> -->
 
 		</div>
 
@@ -50,8 +34,6 @@ Phone: (555) 555-5555</readonly>
 
 		<div id="customer">
 
-            <!-- <textarea id="customer-title">Widget Corp.
-c/o Steve Widget</textarea> -->
 			      <table id="meta" style="float:left !important">
 							<tr>
 									<td class="meta-head">Nama</td>
@@ -156,7 +138,7 @@ c/o Steve Widget</textarea> -->
 
 		</table>
 		<div class="">
-			
+
 		</div>
 		<div id="terms">
 		  <textarea>Terimakasih Atas Kepercayaan Anda</textarea>
