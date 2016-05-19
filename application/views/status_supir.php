@@ -3,7 +3,7 @@
 $this->load->view('template/head');
 ?>
 
-  
+
 <!--tambahkan custom css disini-->
 <!-- iCheck -->
 <link href="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/iCheck/flat/blue.css') ?>" rel="stylesheet" type="text/css" />
@@ -63,7 +63,7 @@ $this->load->view('notice.php');
                                 <td><b><?=$value['jadwal_kerja']?></b></td>
                                 <td><span class="label label-info"><?=$value['plat_mobil']?></span></td>
                             </tr>
-                            <?}?>
+                            <?php }?>
                       </tbody>
                     </table>
                   </div><!-- /.table-responsive -->

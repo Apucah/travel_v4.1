@@ -4,7 +4,11 @@ $this->load->view('template/head');
 ?>
 
 <!-- ChartJS 1.0.1 -->
-<script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/chartjs/Chart.min.js') ?>" type="text/javascript"></script>
+<!-- <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/chartjs/Chart.min.js') ?>" type="text/javascript"></script> -->
+
+
+<!-- Chart JS NEW -->
+<script type="text/javascript" src="<?=base_url();?>/assets/bower_components/Chart.js/dist/Chart.bundle.min.js"></script>
 
 
 <!--tambahkan custom css disini-->
@@ -111,7 +115,7 @@ $this->load->view('notice.php');
                       <div class="row">
                           <div class="col-md-12">
                               <p class="text-center">
-                                  <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                                  <strong></strong>
                               </p>
                               <div class="chart-responsive text-center">
                                   <!-- Sales Chart Canvas -->
@@ -281,9 +285,11 @@ $this->load->view('template/js');
 <!-- iCheck -->
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/iCheck/icheck.min.js') ?>" type="text/javascript"></script>
 
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url('assets/AdminLTE-2.0.5/dist/js/pages/dashboard2.js') ?>" type="text/javascript"></script>
 
+
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<!-- <script src="<?php echo base_url('assets/AdminLTE-2.0.5/dist/js/pages/dashboard2.js') ?>" type="text/javascript"></script> -->
+<!-- <?php $this->load->view('jquery/chart-config'); ?> -->
 
 <!-- JQUERY UI -->
 <script src="<?php echo base_url('assets/jquery-ui/jquery-ui.min.js');?>" type="text/javascript"></script>

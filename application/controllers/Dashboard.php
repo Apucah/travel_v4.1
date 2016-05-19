@@ -29,9 +29,16 @@ class Dashboard extends CI_Controller {
 					$this->load->model('dashboard_model');
 
 
+					for ($i=1; $i <= 7 ; $i++) {
+						$total[0][] = $this->dashboard_model->get_count_bulanan($i)[0];
+						$total[1][] = $this->dashboard_model->get_count_bulanan($i)[1];
+					}
+
 
 					$username = $this->session->userdata('username');
-					$data['data_user'] = $this->auth_model->data_login($username);
+					$data['bulan_bangku'] = [$total[0][0],$total[0][1],$total[0][2],$total[0][3],$total[0][4],$total[0][5],$total[0][6]];
+					$data['bulan_paket'] = [$total[1][0],$total[1][1],$total[1][2],$total[1][3],$total[1][4],$total[1][5],$total[1][6]];
+ 					$data['data_user'] = $this->auth_model->data_login($username);
 					$data['plat_mobil'] = $this->dashboard_model->get_all_plat_mobil();
 					$data['mobil_tersedia'] = $this->dashboard_model->get_some_car();
 					$data['supir'] = $this->dashboard_model->get_some_driver();

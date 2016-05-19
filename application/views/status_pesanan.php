@@ -93,7 +93,7 @@ $this->load->view('notice.php');
                                   <button type="button" name="" class="hapus-paket btn btn-danger" data-id="<?=$value['no_pemesanan']?>">Hapus</button>
                                 </td>
                             </tr>
-                            <?}?>
+                            <?php }?>
                       </tbody>
                     </table>
                   </div><!-- /.table-responsive -->
@@ -160,7 +160,7 @@ $this->load->view('notice.php');
                                                 <button type="button" name="" class="hapus-bangku btn btn-danger" data-id="<?=$value['no_pemesanan']?>">Hapus</button>
                                               </td>
                                           </tr>
-                                          <?}?>
+                                          <?php }?>
                                     </tbody>
                                   </table>
                                 </div><!-- /.table-responsive -->

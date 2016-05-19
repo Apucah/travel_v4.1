@@ -62,7 +62,7 @@ $this->load->view('notice.php');
                                 <td><b><?=$value['alamat']?></b></td>
                                 <td><span class="label label-info"><?=$value['no_telp']?></span></td>
                             </tr>
-                            <?}?>
+                            <?php }?>
                       </tbody>
                     </table>
                   </div><!-- /.table-responsive -->

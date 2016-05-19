@@ -55,7 +55,7 @@ $this->load->view('notice.php');
                         </tr>
                       </thead>
                       <tbody>
-                            <? foreach ($data_mobil as $value) {?>
+                            <?php foreach ($data_mobil as $value) {?>
                             <tr>
                                 <td><p class="blue"><?=$value['plat_mobil']?></p></td>
                                 <td><b><?=$value['nama_mobil']?></b></td>
@@ -63,14 +63,14 @@ $this->load->view('notice.php');
                                 <td><span class="label label-info"><?=$value['id_jenis']?></span></td>
                                 <td><span class="label label-danger"><?=$value['waktu']?></span></td>
                             </tr>
-                            <?}?>
+                            <?php }?>
                       </tbody>
                     </table>
                   </div><!-- /.table-responsive -->
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
                   <p>
-                    <h3>Total <?=$total_supir;?></h3> 
+                    <h3>Total <?=$total_supir;?></h3>
                   </p>
                 </div><!-- /.box-footer -->
               </div>

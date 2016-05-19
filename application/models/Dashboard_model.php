@@ -2,6 +2,19 @@
 
 class Dashboard_model extends CI_Model {
 
+
+    public function get_count_bulanan($bulan){
+      $query1 = "SELECT COUNT(*) as jumlah FROM tbl_pemesanan_bangku WHERE tgl_pemesanan LIKE '%-0{$bulan}-%'";
+      $bangku = $this->db->query($query1)->row_array();
+
+      $query2 = "SELECT COUNT(*) as jumlah FROM tbl_pemesanan_paket WHERE tgl_pemesanan LIKE '%-0{$bulan}-%'";
+      $paket = $this->db->query($query2)->row_array();
+
+      return $total = [$bangku['jumlah'],$paket['jumlah']];
+    }
+
+
+
   public function get_count_total_pendapatan(){
     $this->db->select('SUM(total) as total');
     $total_pendapatan_bangku = $this->db->get('tbl_pemesanan_bangku')->row();
